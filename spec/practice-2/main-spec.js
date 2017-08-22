@@ -19,17 +19,17 @@ describe("Person", () => {
 
   describe("Student", () => {
     it("should have field name, age and class", () => {
-      let klass = new Class(2);
-      let student = new Student("Tom", 21, klass);
+      let clazz = new Class(2);
+      let student = new Student("Tom", 21, clazz);
       expect(student.name).toBe("Tom");
       expect(student.age).toBe(21);
-      expect(student.klass).toBe(klass);
+      expect(student.clazz).toBe(clazz);
 
     });
 
     it("should overwrite Person introduce, introduce student with class", () => {
-      let klass = new Class(2);
-      let student = new Student("Tom", 21, klass);
+      let clazz = new Class(2);
+      let student = new Student("Tom", 21, clazz);
       let introduce = student.introduce();
 
       expect(introduce).toBe("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
@@ -38,9 +38,9 @@ describe("Person", () => {
 
     it("should introduce student is a leader, when class assign this student to be a leader",
     () => {
-      let klass = new Class(2);
-      let student = new Student("Tom", 21, klass);
-      klass.assignLeader(student);
+      let clazz = new Class(2);
+      let student = new Student("Tom", 21, clazz);
+      clazz.assignLeader(student);
       let introduce = student.introduce();
 
       expect(introduce).toBe("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
@@ -57,7 +57,7 @@ describe("Person", () => {
       let teacher = new Teacher("Joun", 21, [klass1, klass2]);
       expect(teacher.name).toBe("Joun");
       expect(teacher.age).toBe(21);
-      expect(teacher.classes).toEqual([klass1, klass2]);
+      expect(teacher.clazzes).toEqual([klass1, klass2]);
     });
 
     it("should overwrite Person introduce and show all classes this teacher teaches",
@@ -80,4 +80,5 @@ describe("Person", () => {
     });
 
   });
+
 });
